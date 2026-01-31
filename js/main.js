@@ -125,6 +125,7 @@ function populateContent() {
     const createCards = (data, containerId) => {
         const container = document.getElementById(containerId);
         if (!container) return;
+        container.innerHTML = ''; // Clear prev content if any (for tabs)
         data.forEach(item => {
             const card = document.createElement('div');
             card.className = 'card';
@@ -137,8 +138,8 @@ function populateContent() {
         });
     };
 
-    // 3. PRODUCTS (Strict 8 Items)
-    const productData = [
+    // Data Categories
+    const nanoparticles = [
         { name: "Ferrite Nanoparticles", desc: "High-purity magnetic nanoparticles.", icon: "fa-magnet" },
         { name: "Metal Oxide Nanoparticles", desc: "Versatile oxides for catalysis and sensors.", icon: "fa-flask" },
         { name: "Functionalized Nanoparticles", desc: "Surface-modified particles for targeted delivery.", icon: "fa-dna" },
@@ -149,8 +150,32 @@ function populateContent() {
         { name: "Biocompatible Coated Nanoparticles", desc: "Safe coatings for medical implants.", icon: "fa-shield-virus" }
     ];
 
-    // 4. SOLUTIONS & SERVICES
-    const solutionData = [
+    const research = [
+        { name: "Hydrogen Production", desc: "Advanced nanomaterials for efficient sustainable fuel generation.", icon: "fa-fire-flame-curved" },
+        { name: "Hydrogen Gas Sensor", desc: "High-sensitivity sensors for leak detection and safety monitoring.", icon: "fa-gauge-high" },
+        { name: "RADAR Absorbing Materials", desc: "Stealth technology materials for improved signal absorption.", icon: "fa-wifi" },
+        { name: "Antenna Miniaturisation", desc: "Compact high-performance antenna designs using nanomaterials.", icon: "fa-satellite-dish" },
+        { name: "Water Purification", desc: "Nanotechnology-based solutions for clean and safe water.", icon: "fa-droplet" },
+        { name: "Microwave Materials", desc: "High-performance materials for microwave frequency applications.", icon: "fa-tower-broadcast" },
+        { name: "Agricultural Application", desc: "Innovative nanomaterials for crop protection and yield enhancement.", icon: "fa-leaf" },
+        { name: "Thermites", desc: "High-energy materials for specialized industrial and defense applications.", icon: "fa-explosion" }
+    ];
+
+    const characterization = [
+        { name: "Material Analysis", desc: "Advanced structural and composition analysis.", icon: "fa-microscope" },
+        { name: "Purity Testing", desc: "Ensuring the highest quality standards for nanomaterials.", icon: "fa-vial" }
+    ];
+
+    const products = [
+        { name: "Four Layered Mask", desc: "Enhanced protection with advanced filtration layers.", icon: "fa-mask-face" },
+        { name: "Alkaline Water Cell", desc: "Efficient cells for alkaline water production.", icon: "fa-bottle-water" },
+        { name: "Plasma Explosion", desc: "State-of-the-art production method.", icon: "fa-bolt" },
+        { name: "Electrospinning Devices", desc: "Precision equipment for nanofibers.", icon: "fa-spinner" },
+        { name: "UV Spectrophotometer", desc: "High-accuracy instruments.", icon: "fa-eye" },
+        { name: "Weighing Machine", desc: "Precision balances.", icon: "fa-scale-balanced" }
+    ];
+
+    const services = [
         { name: "Water Treatment", desc: "Using Nanoferrites for purification.", icon: "fa-droplet" },
         { name: "Hydroelectric Cells", desc: "Green energy from humidity.", icon: "fa-bolt" },
         { name: "Anti-Microbial Coatings", desc: "For dental implants and medical devices.", icon: "fa-tooth" },
@@ -158,17 +183,30 @@ function populateContent() {
         { name: "Custom R&D Solutions", desc: "Tailored research for industrial needs.", icon: "fa-microscope" }
     ];
 
-    createCards(productData, 'products-list');
-    createCards(solutionData, 'services-list');
+    // Initial Populate
+    createCards(nanoparticles, 'nanoparticles-list');
+    createCards(research, 'research-list');
+    createCards(characterization, 'characterization-list');
+    createCards(products, 'products-list');
+    createCards(services, 'services-list');
 
     // Industries
     const industriesCarousel = document.querySelector('.industries-carousel');
-    industries.forEach(ind => {
-        const item = document.createElement('div');
-        item.className = 'industry-item';
-        item.innerText = ind;
-        industriesCarousel.appendChild(item);
-    });
+    const industryData = [
+        "High Frequency Antenna", "Radar Absorption", "Defence & Ammunition",
+        "Water Treatment", "Solar Energy", "Hydrogeneration",
+        "Dental Implants", "Anti-microbial Coatings", "Anti-static Coatings", "Water Resistant Coatings"
+    ];
+
+    if (industriesCarousel) {
+        industriesCarousel.innerHTML = '';
+        industryData.forEach(ind => {
+            const item = document.createElement('div');
+            item.className = 'industry-item';
+            item.innerText = ind;
+            industriesCarousel.appendChild(item);
+        });
+    }
 }
 
 // 3. Animations (GSAP)
