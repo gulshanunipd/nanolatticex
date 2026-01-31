@@ -8,8 +8,13 @@ const nanoparticles = [
 ];
 
 const research = [
-    { name: "Custom Synthesis", desc: "Tailored nanomaterial synthesis for specific research requirements." },
-    { name: "Collaborative R&D", desc: "Joint research projects for industrial applications." }
+    { name: "Hydrogen Production", desc: "Advanced nanomaterials for efficient sustainable fuel generation." },
+    { name: "Hydrogen Gas Sensor", desc: "High-sensitivity sensors for leak detection and safety monitoring." },
+    { name: "RADAR Absorbing Materials", desc: "Stealth technology materials for improved signal absorption." },
+    { name: "Antenna Miniaturisation", desc: "Compact high-performance antenna designs using nanomaterials." },
+    { name: "Water Purification", desc: "Nanotechnology-based solutions for clean and safe water." },
+    { name: "Microwave Materials", desc: "High-performance materials for microwave frequency applications." },
+    { name: "Agricultural Application", desc: "Innovative nanomaterials for crop protection and yield enhancement." }
 ];
 
 const characterization = [
