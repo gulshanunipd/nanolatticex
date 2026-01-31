@@ -14,7 +14,8 @@ const research = [
     { name: "Antenna Miniaturisation", desc: "Compact high-performance antenna designs using nanomaterials." },
     { name: "Water Purification", desc: "Nanotechnology-based solutions for clean and safe water." },
     { name: "Microwave Materials", desc: "High-performance materials for microwave frequency applications." },
-    { name: "Agricultural Application", desc: "Innovative nanomaterials for crop protection and yield enhancement." }
+    { name: "Agricultural Application", desc: "Innovative nanomaterials for crop protection and yield enhancement." },
+    { name: "Thermites", desc: "High-energy materials for specialized industrial and defense applications." }
 ];
 
 const characterization = [
@@ -23,10 +24,12 @@ const characterization = [
 ];
 
 const products = [
-    { name: "Nano-Bio Diesels", desc: "Sustainable energy solutions enhanced with nanotechnology." },
-    { name: "Composite nanoclusters", desc: "Advanced multi-phase materials for specialized industrial use." },
-    { name: "Hydroelectric cells", desc: "Green energy generation using humidity and nanomaterials." },
-    { name: "Biocompatible coated nanoparticles", desc: "Safe and effective coatings for medical implants and diagnostics." }
+    { name: "Four Layered Mask", desc: "Enhanced protection with advanced filtration layers." },
+    { name: "Alkaline Water Cell", desc: "Efficient cells for alkaline water production." },
+    { name: "Plasma Explosion for Nanoparticles", desc: "State-of-the-art production method for high-purity nanoparticles." },
+    { name: "Electrospinning Devices", desc: "Precision equipment for producing nanofibers." },
+    { name: "UV Spectrophotometer", desc: "High-accuracy instruments for optical characterization." },
+    { name: "Weighing Machine", desc: "Precision balances for laboratory and industrial use." }
 ];
 
 const consultancy = [
