@@ -128,7 +128,6 @@ function populateContent() {
         data.forEach(item => {
             const card = document.createElement('div');
             card.className = 'card';
-            // Added icon div
             card.innerHTML = `
                 <div class="card-icon"><i class="fa-solid ${item.icon}"></i></div>
                 <h3>${item.name}</h3>
@@ -138,11 +137,29 @@ function populateContent() {
         });
     };
 
-    createCards(nanoparticles, 'nanoparticles-list');
-    createCards(research, 'research-list');
-    createCards(characterization, 'characterization-list');
-    createCards(products, 'products-list');
-    createCards(consultancy, 'consultancy-list');
+    // 3. PRODUCTS (Strict 8 Items)
+    const productData = [
+        { name: "Ferrite Nanoparticles", desc: "High-purity magnetic nanoparticles.", icon: "fa-magnet" },
+        { name: "Metal Oxide Nanoparticles", desc: "Versatile oxides for catalysis and sensors.", icon: "fa-flask" },
+        { name: "Functionalized Nanoparticles", desc: "Surface-modified particles for targeted delivery.", icon: "fa-dna" },
+        { name: "Carbon-Based Nanoparticles", desc: "Graphene, CNTs, and fullerenes.", icon: "fa-layer-group" },
+        { name: "Nano-Bio Diesels", desc: "Sustainable energy solutions.", icon: "fa-leaf" },
+        { name: "Composite Nanoclusters", desc: "Advanced multi-phase materials.", icon: "fa-atom" },
+        { name: "Bi-Halide Nanostructures", desc: "Novel structures for optical devices.", icon: "fa-lightbulb" },
+        { name: "Biocompatible Coated Nanoparticles", desc: "Safe coatings for medical implants.", icon: "fa-shield-virus" }
+    ];
+
+    // 4. SOLUTIONS & SERVICES
+    const solutionData = [
+        { name: "Water Treatment", desc: "Using Nanoferrites for purification.", icon: "fa-droplet" },
+        { name: "Hydroelectric Cells", desc: "Green energy from humidity.", icon: "fa-bolt" },
+        { name: "Anti-Microbial Coatings", desc: "For dental implants and medical devices.", icon: "fa-tooth" },
+        { name: "Thermite Materials", desc: "For ammunition applications.", icon: "fa-explosion" },
+        { name: "Custom R&D Solutions", desc: "Tailored research for industrial needs.", icon: "fa-microscope" }
+    ];
+
+    createCards(productData, 'products-list');
+    createCards(solutionData, 'services-list');
 
     // Industries
     const industriesCarousel = document.querySelector('.industries-carousel');

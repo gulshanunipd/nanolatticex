@@ -116,9 +116,38 @@
         <!-- Industries Section -->
         <section id="industries" class="industries-section">
             <div class="container">
-                <h2 class="section-title" data-scroll>Industries We Cater</h2>
+                <h2 class="section-title" data-scroll>Industries</h2>
                 <div class="industries-carousel">
                     <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Corporate Information Section -->
+        <section id="corporate" class="about-section">
+            <div class="container">
+                <h2 class="section-title" data-scroll>Corporate Information</h2>
+                <div class="corporate-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="card">
+                        <h3><i class="fa-solid fa-building"></i> Company Details</h3>
+                        <ul style="list-style: none; margin-top: 1rem; line-height: 2;">
+                            <li><strong>Certificate of Incorporation:</strong> [View/Download]</li>
+                            <li><strong>Registration Details:</strong> LLP Identification Number: [Placeholder]</li>
+                            <li><strong>Designated Partners:</strong> [Gulshan Kumar, Partner 2]</li>
+                            <li><strong>GST/PAN:</strong> [Details Placeholder]</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fa-solid fa-file-invoice-dollar"></i> Financial Documents</h3>
+                        <ul style="list-style: none; margin-top: 1rem; line-height: 2;">
+                            <li><a href="#" style="color: var(--accent-color);">Balance Sheet – Year 1 <i
+                                        class="fa-solid fa-download"></i></a></li>
+                            <li><a href="#" style="color: var(--accent-color);">Balance Sheet – Year 2 <i
+                                        class="fa-solid fa-download"></i></a></li>
+                            <li><a href="#" style="color: var(--accent-color);">Profit & Loss Statements <i
+                                        class="fa-solid fa-download"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -126,12 +155,19 @@
         <!-- Careers Section -->
         <section id="careers" class="careers-section">
             <div class="container">
-                <h2 class="section-title" data-scroll>Join Our Team</h2>
+                <h2 class="section-title" data-scroll>Careers</h2>
                 <div class="careers-content">
-                    <p>We are always looking for brilliant minds. Contact us to apply.</p>
+                    <p>We are always looking for brilliant minds. Join us for Internship & Research Opportunities.</p>
                     <div class="contact-card">
-                        <p><strong>Email Us:</strong> [Email Placeholder]</p>
-                        <p><strong>Call Us:</strong> [Phone Placeholder]</p>
+                        <h3>Apply Now</h3>
+                        <form class="contact-form" style="margin-top: 1rem;">
+                            <input type="text" placeholder="Name" required>
+                            <input type="email" placeholder="Email" required>
+                            <input type="text" placeholder="Contact Number" required>
+                            <button type="button" style="background: var(--text-secondary);">Resume Upload
+                                (Mock)</button>
+                            <button type="submit">Submit Application</button>
+                        </form>
                     </div>
                 </div>
             </div>
