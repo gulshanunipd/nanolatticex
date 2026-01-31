@@ -2,7 +2,8 @@
     --bg-color: #050a14;
     --text-primary: #e0e6ed;
     --text-secondary: #94a3b8;
-    --accent-color: #0ea5e9; /* Sky blue/Cyan */
+    --accent-color: #0ea5e9;
+    /* Sky blue/Cyan */
     --accent-glow: rgba(14, 165, 233, 0.4);
     --card-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
@@ -138,6 +139,31 @@ body {
     border-color: var(--accent-color);
 }
 
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+    text-shadow: 0 0 15px var(--accent-glow);
+    animation: icon-float 2s ease-in-out infinite;
+}
+
+@keyframes icon-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
 /* Hero Section */
 .hero-section {
     height: 100vh;
@@ -206,8 +232,15 @@ body {
 }
 
 @keyframes scroll {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(20px); opacity: 0; }
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
 }
 
 /* About Section */
@@ -243,7 +276,8 @@ body {
     transition: all 0.3s;
 }
 
-.tab-btn.active, .tab-btn:hover {
+.tab-btn.active,
+.tab-btn:hover {
     background: var(--accent-color);
     color: #fff;
     border-color: var(--accent-color);
@@ -305,7 +339,8 @@ body {
     gap: 1rem;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     padding: 1rem;
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid var(--glass-border);
@@ -314,7 +349,8 @@ body {
     font-family: var(--font-main);
 }
 
-.contact-form input:focus, .contact-form textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     outline: none;
     border-color: var(--accent-color);
 }
@@ -348,13 +384,17 @@ footer {
         display: none;
         /* Mobile menu implementation later if needed, simple hide for now */
     }
+
     .hamburger {
         display: flex;
     }
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    .about-grid, .contact-wrapper {
+
+    .about-grid,
+    .contact-wrapper {
         grid-template-columns: 1fr;
     }
 }

@@ -1,40 +1,40 @@
 // Data
 const nanoparticles = [
-    { name: "Ferrite Nanoparticles", desc: "High-purity magnetic nanoparticles for biomedical and electronic applications." },
-    { name: "Metal Oxide Nanoparticles", desc: "Versatile oxides for catalysis, energy storage, and sensors." },
-    { name: "Functionalized Nanoparticles", desc: "Surface-modified particles for targeted drug delivery and enhanced compatibility." },
-    { name: "Carbon based Nanoparticles", desc: "Graphene, CNTs, and fullerenes for superior strength and conductivity." },
-    { name: "Bi-Halide Nanostructures", desc: "Novel structures for next-gen optical devices." }
+    { name: "Ferrite Nanoparticles", desc: "High-purity magnetic nanoparticles for biomedical and electronic applications.", icon: "fa-magnet" },
+    { name: "Metal Oxide Nanoparticles", desc: "Versatile oxides for catalysis, energy storage, and sensors.", icon: "fa-flask" },
+    { name: "Functionalized Nanoparticles", desc: "Surface-modified particles for targeted drug delivery and enhanced compatibility.", icon: "fa-dna" },
+    { name: "Carbon based Nanoparticles", desc: "Graphene, CNTs, and fullerenes for superior strength and conductivity.", icon: "fa-layer-group" },
+    { name: "Bi-Halide Nanostructures", desc: "Novel structures for next-gen optical devices.", icon: "fa-lightbulb" }
 ];
 
 const research = [
-    { name: "Hydrogen Production", desc: "Advanced nanomaterials for efficient sustainable fuel generation." },
-    { name: "Hydrogen Gas Sensor", desc: "High-sensitivity sensors for leak detection and safety monitoring." },
-    { name: "RADAR Absorbing Materials", desc: "Stealth technology materials for improved signal absorption." },
-    { name: "Antenna Miniaturisation", desc: "Compact high-performance antenna designs using nanomaterials." },
-    { name: "Water Purification", desc: "Nanotechnology-based solutions for clean and safe water." },
-    { name: "Microwave Materials", desc: "High-performance materials for microwave frequency applications." },
-    { name: "Agricultural Application", desc: "Innovative nanomaterials for crop protection and yield enhancement." },
-    { name: "Thermites", desc: "High-energy materials for specialized industrial and defense applications." }
+    { name: "Hydrogen Production", desc: "Advanced nanomaterials for efficient sustainable fuel generation.", icon: "fa-fire-flame-curved" },
+    { name: "Hydrogen Gas Sensor", desc: "High-sensitivity sensors for leak detection and safety monitoring.", icon: "fa-gauge-high" },
+    { name: "RADAR Absorbing Materials", desc: "Stealth technology materials for improved signal absorption.", icon: "fa-wifi" },
+    { name: "Antenna Miniaturisation", desc: "Compact high-performance antenna designs using nanomaterials.", icon: "fa-satellite-dish" },
+    { name: "Water Purification", desc: "Nanotechnology-based solutions for clean and safe water.", icon: "fa-droplet" },
+    { name: "Microwave Materials", desc: "High-performance materials for microwave frequency applications.", icon: "fa-tower-broadcast" },
+    { name: "Agricultural Application", desc: "Innovative nanomaterials for crop protection and yield enhancement.", icon: "fa-leaf" },
+    { name: "Thermites", desc: "High-energy materials for specialized industrial and defense applications.", icon: "fa-explosion" }
 ];
 
 const characterization = [
-    { name: "Material Analysis", desc: "Advanced structural and composition analysis." },
-    { name: "Purity Testing", desc: " ensuring the highest quality standards for nanomaterials." }
+    { name: "Material Analysis", desc: "Advanced structural and composition analysis.", icon: "fa-microscope" },
+    { name: "Purity Testing", desc: "Enuring the highest quality standards for nanomaterials.", icon: "fa-vial" }
 ];
 
 const products = [
-    { name: "Four Layered Mask", desc: "Enhanced protection with advanced filtration layers." },
-    { name: "Alkaline Water Cell", desc: "Efficient cells for alkaline water production." },
-    { name: "Plasma Explosion for Nanoparticles", desc: "State-of-the-art production method for high-purity nanoparticles." },
-    { name: "Electrospinning Devices", desc: "Precision equipment for producing nanofibers." },
-    { name: "UV Spectrophotometer", desc: "High-accuracy instruments for optical characterization." },
-    { name: "Weighing Machine", desc: "Precision balances for laboratory and industrial use." }
+    { name: "Four Layered Mask", desc: "Enhanced protection with advanced filtration layers.", icon: "fa-mask-face" },
+    { name: "Alkaline Water Cell", desc: "Efficient cells for alkaline water production.", icon: "fa-bottle-water" },
+    { name: "Plasma Explosion for Nanoparticles", desc: "State-of-the-art production method for high-purity nanoparticles.", icon: "fa-bolt" },
+    { name: "Electrospinning Devices", desc: "Precision equipment for producing nanofibers.", icon: "fa-spinner" },
+    { name: "UV Spectrophotometer", desc: "High-accuracy instruments for optical characterization.", icon: "fa-eye" },
+    { name: "Weighing Machine", desc: "Precision balances for laboratory and industrial use.", icon: "fa-scale-balanced" }
 ];
 
 const consultancy = [
-    { name: "Industrial Applications", desc: "Expert advice on integrating nanotechnology into production." },
-    { name: "Water Treatment Solutions", desc: "Consultancy on using nanoferrites for water purification." }
+    { name: "Industrial Applications", desc: "Expert advice on integrating nanotechnology into production.", icon: "fa-industry" },
+    { name: "Water Treatment Solutions", desc: "Consultancy on using nanoferrites for water purification.", icon: "fa-hands-bubbles" }
 ];
 
 const industries = [
@@ -128,7 +128,12 @@ function populateContent() {
         data.forEach(item => {
             const card = document.createElement('div');
             card.className = 'card';
-            card.innerHTML = `<h3>${item.name}</h3><p>${item.desc}</p>`;
+            // Added icon div
+            card.innerHTML = `
+                <div class="card-icon"><i class="fa-solid ${item.icon}"></i></div>
+                <h3>${item.name}</h3>
+                <p>${item.desc}</p>
+            `;
             container.appendChild(card);
         });
     };
