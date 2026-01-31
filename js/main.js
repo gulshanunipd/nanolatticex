@@ -1,0 +1,230 @@
+// Data
+const nanoparticles = [
+    { name: "Ferrite Nanoparticles", desc: "High-purity magnetic nanoparticles for biomedical and electronic applications." },
+    { name: "Metal Oxide Nanoparticles", desc: "Versatile oxides for catalysis, energy storage, and sensors." },
+    { name: "Functionalized Nanoparticles", desc: "Surface-modified particles for targeted drug delivery and enhanced compatibility." },
+    { name: "Carbon based Nanoparticles", desc: "Graphene, CNTs, and fullerenes for superior strength and conductivity." },
+    { name: "Bi-Halide Nanostructures", desc: "Novel structures for next-gen optical devices." }
+];
+
+const research = [
+    { name: "Custom Synthesis", desc: "Tailored nanomaterial synthesis for specific research requirements." },
+    { name: "Collaborative R&D", desc: "Joint research projects for industrial applications." }
+];
+
+const characterization = [
+    { name: "Material Analysis", desc: "Advanced structural and composition analysis." },
+    { name: "Purity Testing", desc: " ensuring the highest quality standards for nanomaterials." }
+];
+
+const products = [
+    { name: "Nano-Bio Diesels", desc: "Sustainable energy solutions enhanced with nanotechnology." },
+    { name: "Composite nanoclusters", desc: "Advanced multi-phase materials for specialized industrial use." },
+    { name: "Hydroelectric cells", desc: "Green energy generation using humidity and nanomaterials." },
+    { name: "Biocompatible coated nanoparticles", desc: "Safe and effective coatings for medical implants and diagnostics." }
+];
+
+const consultancy = [
+    { name: "Industrial Applications", desc: "Expert advice on integrating nanotechnology into production." },
+    { name: "Water Treatment Solutions", desc: "Consultancy on using nanoferrites for water purification." }
+];
+
+const industries = [
+    "High Frequency Antenna", "Radar Absorption", "Defence & Ammunition",
+    "Water Treatment", "Solar Energy", "Hydrogeneration",
+    "Dental Implants", "Anti-microbial Coatings", "Anti-static Coatings", "Water Resistant Coatings"
+];
+
+// Document Ready
+document.addEventListener('DOMContentLoaded', () => {
+    initThreeJS();
+    populateContent();
+    initAnimations();
+    setupNavigation();
+});
+
+// 1. Three.js Background (The "Lattice")
+function initThreeJS() {
+    const container = document.getElementById('canvas-container');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    container.appendChild(renderer.domElement);
+
+    // Create Lattice (Points and Lines)
+    const geometry = new THREE.IcosahedronGeometry(10, 2); // Radius 10, detail 2
+    const wireframe = new THREE.WireframeGeometry(geometry);
+
+    const lineMaterial = new THREE.LineBasicMaterial({
+        color: 0x0ea5e9, // Cyan accent
+        transparent: true,
+        opacity: 0.15
+    });
+
+    const lines = new THREE.LineSegments(wireframe, lineMaterial);
+    scene.add(lines);
+
+    // Add Particles
+    const particlesGeometry = new THREE.BufferGeometry();
+    const particleCount = 200;
+    const posArray = new Float32Array(particleCount * 3);
+
+    for (let i = 0; i < particleCount * 3; i++) {
+        posArray[i] = (Math.random() - 0.5) * 40; // Spread 40
+    }
+
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+    const particlesMaterial = new THREE.PointsMaterial({
+        size: 0.1,
+        color: 0xffffff,
+        transparent: true,
+        opacity: 0.5
+    });
+
+    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particlesMesh);
+
+    camera.position.z = 15;
+
+    // Animation Loop
+    function animate() {
+        requestAnimationFrame(animate);
+
+        lines.rotation.x += 0.001;
+        lines.rotation.y += 0.001;
+
+        particlesMesh.rotation.y -= 0.0005;
+
+        // Mouse interaction (gentle parallax)
+        // (Simplified for performance)
+
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    // Resize Handler
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+}
+
+// 2. Populate Content
+function populateContent() {
+    const createCards = (data, containerId) => {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        data.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `<h3>${item.name}</h3><p>${item.desc}</p>`;
+            container.appendChild(card);
+        });
+    };
+
+    createCards(nanoparticles, 'nanoparticles-list');
+    createCards(research, 'research-list');
+    createCards(characterization, 'characterization-list');
+    createCards(products, 'products-list');
+    createCards(consultancy, 'consultancy-list');
+
+    // Industries
+    const industriesCarousel = document.querySelector('.industries-carousel');
+    industries.forEach(ind => {
+        const item = document.createElement('div');
+        item.className = 'industry-item';
+        item.innerText = ind;
+        industriesCarousel.appendChild(item);
+    });
+}
+
+// 3. Animations (GSAP)
+function initAnimations() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Fade In
+    gsap.from('.hero-content', {
+        duration: 1.5,
+        y: 50,
+        opacity: 0,
+        ease: 'power3.out'
+    });
+
+    // Section Titles
+    gsap.utils.toArray('.section-title').forEach(title => {
+        gsap.from(title, {
+            scrollTrigger: {
+                trigger: title,
+                start: 'top 80%',
+            },
+            y: 30,
+            opacity: 0,
+            duration: 1
+        });
+    });
+
+    // Cards Stagger
+    gsap.utils.toArray('.card').forEach(card => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+            },
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'back.out(1.7)'
+        });
+    });
+
+    // Industry Items Stagger
+    gsap.from('.industry-item', {
+        scrollTrigger: {
+            trigger: '.industries-carousel',
+            start: 'top 80%',
+        },
+        scale: 0.5,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.5
+    });
+}
+
+// 4. Navigation & Tabs
+function setupNavigation() {
+    // Tabs
+    const buttons = document.querySelectorAll('.tab-btn');
+    const grids = document.querySelectorAll('.products-grid');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active
+            buttons.forEach(b => b.classList.remove('active'));
+            grids.forEach(g => g.classList.remove('active'));
+
+            // Add active
+            btn.classList.add('active');
+            document.getElementById(btn.dataset.target).classList.add('active');
+        });
+    });
+
+    // Mobile Menu
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        if (navLinks.style.display === 'flex') {
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '70px';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'rgba(5, 10, 20, 0.95)';
+            navLinks.style.width = '100%';
+            navLinks.style.padding = '2rem';
+        }
+    });
+}
