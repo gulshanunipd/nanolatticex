@@ -189,6 +189,7 @@ function populateContent() {
     createCards(characterization, 'characterization-list');
     createCards(products, 'products-list');
     createCards(services, 'services-list');
+    createCards(services, 'consultancy-list');
 
     // Industries Data (Rich format for Tabs)
     const industryData = [
@@ -206,20 +207,7 @@ function populateContent() {
 
     // Populate Industries Tab
     createCards(industryData, 'industries-tab-list');
-
-    // Populate Bottom Carousel (Text Only)
-    const industriesCarousel = document.querySelector('.industries-carousel');
-    if (industriesCarousel) {
-        industriesCarousel.innerHTML = '';
-        industryData.forEach(item => {
-            const div = document.createElement('div');
-            div.className = 'industry-item';
-            div.innerText = item.name;
-            industriesCarousel.appendChild(div);
-        });
-    }
 }
-
 // 3. Animations (GSAP)
 function initAnimations() {
     gsap.registerPlugin(ScrollTrigger);
