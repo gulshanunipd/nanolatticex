@@ -190,21 +190,32 @@ function populateContent() {
     createCards(products, 'products-list');
     createCards(services, 'services-list');
 
-    // Industries
-    const industriesCarousel = document.querySelector('.industries-carousel');
+    // Industries Data (Rich format for Tabs)
     const industryData = [
-        "High Frequency Antenna", "Radar Absorption", "Defence & Ammunition",
-        "Water Treatment", "Solar Energy", "Hydrogeneration",
-        "Dental Implants", "Anti-microbial Coatings", "Anti-static Coatings", "Water Resistant Coatings"
+        { name: "High-Frequency Antennas", desc: "Advanced telecommunication solutions.", icon: "fa-satellite-dish" },
+        { name: "Radar Absorption", desc: "Stealth and signal management.", icon: "fa-wifi" },
+        { name: "Defence & Ammunition", desc: "High-grade materials for defense applications.", icon: "fa-shield-halved" },
+        { name: "Water Treatment", desc: "Purification using nanoferrites.", icon: "fa-droplet" },
+        { name: "Solar Energy", desc: "Next-gen solar tech materials.", icon: "fa-solar-panel" },
+        { name: "Hydrogeneration", desc: "Efficient energy generation.", icon: "fa-bolt" },
+        { name: "Dental Implants", desc: "Biocompatible nano-materials.", icon: "fa-tooth" },
+        { name: "Anti-Microbial Coatings", desc: "Protective sprays and coatings.", icon: "fa-spray-can" },
+        { name: "Anti-Static Coatings", desc: "Preventing static discharge.", icon: "fa-bolt-lightning" },
+        { name: "Water-Resistant Coatings", desc: "Advanced hydrophobic layers.", icon: "fa-umbrella" }
     ];
 
+    // Populate Industries Tab
+    createCards(industryData, 'industries-tab-list');
+
+    // Populate Bottom Carousel (Text Only)
+    const industriesCarousel = document.querySelector('.industries-carousel');
     if (industriesCarousel) {
         industriesCarousel.innerHTML = '';
-        industryData.forEach(ind => {
-            const item = document.createElement('div');
-            item.className = 'industry-item';
-            item.innerText = ind;
-            industriesCarousel.appendChild(item);
+        industryData.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'industry-item';
+            div.innerText = item.name;
+            industriesCarousel.appendChild(div);
         });
     }
 }

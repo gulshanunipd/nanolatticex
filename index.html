@@ -44,10 +44,14 @@
         <!-- Hero Section -->
         <section id="home" class="hero-section">
             <div class="hero-content" data-scroll>
-                <h1>Precision in <span class="highlight">Nanostructure</span></h1>
-                <p>Purest Nanomaterials for Research and Production. Innovation and difference for the age of
-                    nanotechnology.</p>
-                <a href="#products" class="cta-button">Explore Products</a>
+                <h1>Engineering <span class="highlight">Intelligent Matter</span><br>for Real-World Systems</h1>
+                <p>At Nanolatticex, we believe the future of technology is defined not just by software or data—but by
+                    how matter itself is engineered.</p>
+                <div class="hero-tags">
+                    <span>Lightweight</span> &bull; <span>Adaptive</span> &bull; <span>Scalable</span>
+                </div>
+                <br>
+                <a href="#about" class="cta-button">Discover More</a>
             </div>
             <div class="scroll-indicator">
                 <span></span>
@@ -57,30 +61,69 @@
         <!-- About Section -->
         <section id="about" class="about-section">
             <div class="container">
-                <div class="about-grid">
+                <h2 class="section-title" data-scroll>About Us</h2>
+
+                <!-- Section 1: Introduction & Rigid to Living -->
+                <div class="about-grid" style="margin-bottom: 3rem;">
                     <div class="about-image" data-scroll>
-                        <img src="assets/pik1.jpeg" alt="NanoLatticeX Research" style="width: 100%; border-radius: 12px; box-shadow: 0 0 20px var(--accent-glow);">
+                        <img src="assets/pik1.jpeg" alt="Nanolattice Structure"
+                            style="width: 100%; border-radius: 12px; box-shadow: 0 0 20px var(--accent-glow);">
                     </div>
                     <div class="about-text" data-scroll>
-                        <h2 class="section-title">Who We Are</h2>
-                        <p>NanolatticeX places great importance on the use of the purest Nanomaterials that have a consistent composition and are free from any impurities. "Nano" + "Lattice" signifies our commitment to structural perfection.</p>
-                        <p>We establish a valuable connection based on accuracy and excellence, collaborating with researchers worldwide.</p>
+                        <h3>From Rigid Materials to Living Structures</h3>
+                        <p>Traditional materials were built for static environments. Nanolatticex develops
+                            nano-architected lattice materials designed for a dynamic, hyper-connected world.</p>
+                        <ul class="feature-list" style="list-style: none; margin-top: 1rem;">
+                            <li><i class="fa-solid fa-check" style="color: var(--accent-color);"></i> Structurally
+                                efficient with extreme strength-to-weight performance</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--accent-color);"></i> Adaptable with
+                                tunable mechanical, thermal, and functional properties</li>
+                            <li><i class="fa-solid fa-check" style="color: var(--accent-color);"></i> Scalable from nano
+                                to macro dimensions</li>
+                        </ul>
                     </div>
-                    <div class="vision-mission">
-                        <div class="card vision" data-scroll>
-                            <h3>Our Vision</h3>
-                            <p>Embracing competence, collaboration, and timeliness to expand and establish a strong
-                                brand presence.</p>
-                        </div>
-                        <div class="card mission" data-scroll>
-                            <h3>Our Mission</h3>
-                            <p>Promoting prospects for nano-research, product development, and commercialization with
-                                the highest quality materials.</p>
-                        </div>
+                </div>
+
+                <!-- Section 2: Architecture & Applications Grid -->
+                <div class="vision-mission" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="card" data-scroll>
+                        <h3><i class="fa-solid fa-dna"></i> Architecture at the Nanoscale</h3>
+                        <p>Just as modern digital systems require new architectures, materials now demand architectural
+                            thinking at the nanoscale.</p>
+                        <p style="margin-top: 10px; font-size: 0.9rem;">By controlling geometry, connectivity, and
+                            hierarchy, we enable:</p>
+                        <ul style="font-size: 0.9rem; margin-left: 1rem; margin-top: 5px;">
+                            <li>Superior energy absorption</li>
+                            <li>Advanced thermal & acoustic control</li>
+                            <li>Multifunctional material behavior</li>
+                        </ul>
                     </div>
+                    <div class="card" data-scroll>
+                        <h3><i class="fa-solid fa-industry"></i> Next-Gen Applications</h3>
+                        <p>Designed for industries where performance, adaptability, and efficiency are critical:</p>
+                        <ul style="font-size: 0.9rem; margin-left: 1rem; margin-top: 5px;">
+                            <li>Advanced manufacturing</li>
+                            <li>Aerospace and mobility</li>
+                            <li>Energy systems</li>
+                            <li>Robotics and automation</li>
+                        </ul>
+                        <p style="margin-top: 10px; font-style: italic;">Bridging research-grade innovation with
+                            industrial reality.</p>
+                    </div>
+                </div>
+
+                <!-- Section 3: Future -->
+                <div class="future-quote"
+                    style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid var(--glass-border);">
+                    <h3 style="color: var(--text-primary);">The Future is a Competition Between Systems</h3>
+                    <p style="max-width: 800px; margin: 1rem auto; color: var(--text-secondary);">In the next era of
+                        innovation, advantage will not come from materials alone, but from how systems are
+                        architected—from atoms to applications. <strong>Nanolatticex is building the material foundation
+                            for that future.</strong></p>
                 </div>
             </div>
         </section>
+
 
         <!-- Products Section -->
         <section id="products" class="products-section">
@@ -93,6 +136,7 @@
                     <button class="tab-btn" data-target="characterization-list">Characterization</button>
                     <button class="tab-btn" data-target="products-list">Products</button>
                     <button class="tab-btn" data-target="consultancy-list">Consultancy</button>
+                    <button class="tab-btn" data-target="industries-tab-list">Industries</button>
                 </div>
 
                 <div class="products-grid active" id="nanoparticles-list">
@@ -108,6 +152,9 @@
                     <!-- Populated by JS -->
                 </div>
                 <div class="products-grid" id="consultancy-list">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="products-grid" id="industries-tab-list">
                     <!-- Populated by JS -->
                 </div>
             </div>
