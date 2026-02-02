@@ -158,7 +158,12 @@ function populateContent() {
         { name: "Water Purification", desc: "Nanotechnology-based solutions for clean and safe water.", icon: "fa-droplet" },
         { name: "Microwave Materials", desc: "High-performance materials for microwave frequency applications.", icon: "fa-tower-broadcast" },
         { name: "Agricultural Application", desc: "Innovative nanomaterials for crop protection and yield enhancement.", icon: "fa-leaf" },
-        { name: "Thermites", desc: "High-energy materials for specialized industrial and defense applications.", icon: "fa-explosion" }
+        { name: "Thermites", desc: "High-energy materials for specialized industrial and defense applications.", icon: "fa-explosion" },
+        { name: "Magnetic NPs for DNA Extraction", desc: "High-efficiency magnetic carriers for nucleic acid isolation.", icon: "fa-dna" },
+        { name: "Silver, Zinc & Copper Ferrites", desc: "Versatile spinel ferrites with tunable magnetic properties.", icon: "fa-magnet" },
+        { name: "Green Synthesis", desc: "Eco-friendly nanoparticle production using biological methods.", icon: "fa-seedling" },
+        { name: "Silver Nanoparticles", desc: "Potent antimicrobial agents for medical and industrial use.", icon: "fa-vial" },
+        { name: "Aluminium Nanoparticles", desc: "High-reactivity additives for energetic materials and catalysis.", icon: "fa-cube" }
     ];
 
     const characterization = [
