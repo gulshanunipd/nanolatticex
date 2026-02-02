@@ -163,7 +163,15 @@ function populateContent() {
         { name: "Silver, Zinc & Copper Ferrites", desc: "Versatile spinel ferrites with tunable magnetic properties.", icon: "fa-magnet" },
         { name: "Green Synthesis", desc: "Eco-friendly nanoparticle production using biological methods.", icon: "fa-seedling" },
         { name: "Silver Nanoparticles", desc: "Potent antimicrobial agents for medical and industrial use.", icon: "fa-vial" },
-        { name: "Aluminium Nanoparticles", desc: "High-reactivity additives for energetic materials and catalysis.", icon: "fa-cube" }
+        { name: "Aluminium Nanoparticles", desc: "High-reactivity additives for energetic materials and catalysis.", icon: "fa-cube" },
+        { name: "High-Frequency Antennas", desc: "Advanced telecommunication solutions.", icon: "fa-satellite-dish" },
+        { name: "Defence & Ammunition", desc: "High-grade materials for defense applications.", icon: "fa-shield-halved" },
+        { name: "Solar Energy", desc: "Next-gen solar tech materials.", icon: "fa-solar-panel" },
+        { name: "Hydrogeneration", desc: "Efficient energy generation.", icon: "fa-bolt" },
+        { name: "Dental Implants", desc: "Biocompatible nano-materials.", icon: "fa-tooth" },
+        { name: "Anti-Microbial Coatings", desc: "Protective sprays and coatings.", icon: "fa-spray-can" },
+        { name: "Anti-Static Coatings", desc: "Preventing static discharge.", icon: "fa-bolt-lightning" },
+        { name: "Water-Resistant Coatings", desc: "Advanced hydrophobic layers.", icon: "fa-umbrella" }
     ];
 
     const characterization = [
@@ -196,22 +204,7 @@ function populateContent() {
     createCards(services, 'services-list');
     createCards(services, 'consultancy-list');
 
-    // Industries Data (Rich format for Tabs)
-    const industryData = [
-        { name: "High-Frequency Antennas", desc: "Advanced telecommunication solutions.", icon: "fa-satellite-dish" },
-        { name: "Radar Absorption", desc: "Stealth and signal management.", icon: "fa-wifi" },
-        { name: "Defence & Ammunition", desc: "High-grade materials for defense applications.", icon: "fa-shield-halved" },
-        { name: "Water Treatment", desc: "Purification using nanoferrites.", icon: "fa-droplet" },
-        { name: "Solar Energy", desc: "Next-gen solar tech materials.", icon: "fa-solar-panel" },
-        { name: "Hydrogeneration", desc: "Efficient energy generation.", icon: "fa-bolt" },
-        { name: "Dental Implants", desc: "Biocompatible nano-materials.", icon: "fa-tooth" },
-        { name: "Anti-Microbial Coatings", desc: "Protective sprays and coatings.", icon: "fa-spray-can" },
-        { name: "Anti-Static Coatings", desc: "Preventing static discharge.", icon: "fa-bolt-lightning" },
-        { name: "Water-Resistant Coatings", desc: "Advanced hydrophobic layers.", icon: "fa-umbrella" }
-    ];
 
-    // Populate Industries Tab
-    createCards(industryData, 'industries-tab-list');
 }
 // 3. Animations (GSAP)
 function initAnimations() {
