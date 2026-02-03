@@ -420,3 +420,69 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* Collaboration Logo Glow Effects */
+.collab-logo-img {
+    border-radius: 12px;
+    border: 2px solid transparent; /* Base border */
+    padding: 8px;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+.collab-logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* 1. Cheema Boilers (Orange) */
+.glow-orange {
+    border-color: #f97316;
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.3);
+}
+.glow-orange:hover {
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.6);
+}
+
+/* 2. LPU (Yellow/Gold) */
+.glow-yellow {
+    border-color: #eab308;
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.3);
+}
+.glow-yellow:hover {
+    box-shadow: 0 0 30px rgba(234, 179, 8, 0.6);
+}
+
+/* 3. DesignInnova (Purple) */
+.glow-purple {
+    border-color: #a855f7;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+}
+.glow-purple:hover {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+}
+
+/* 4. Renderwise (Green) */
+.glow-green {
+    border-color: #22c55e;
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+}
+.glow-green:hover {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.6);
+}
+
+/* 5. British Council (Pink) */
+.glow-pink {
+    border-color: #ec4899;
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.3);
+}
+.glow-pink:hover {
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.6);
+}
+
+/* 6. Ulster University (Indigo) */
+.glow-indigo {
+    border-color: #6366f1;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+}
+.glow-indigo:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
+}
