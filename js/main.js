@@ -45,6 +45,67 @@ const industries = [
 
 // Document Ready
 document.addEventListener('DOMContentLoaded', () => {
+    // Navigation Tab Logic
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = {
+        'home': ['home'],
+        'about': ['about', 'corporate', 'careers'],
+        'products': ['products'],
+        'collaborations': ['collaborations'],
+        'contact': ['contact']
+    };
+
+    function showSection(activeKey) {
+        // Hide all major sections
+        document.querySelectorAll('main > section').forEach(sec => {
+            sec.classList.add('section-hidden');
+        });
+
+        // Show target sections
+        const targetIds = sections[activeKey];
+        if (targetIds) {
+            targetIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.classList.remove('section-hidden');
+            });
+        }
+
+        // Refresh ScrollTrigger
+        ScrollTrigger.refresh();
+
+        // Update active state in navbar
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === '#' + activeKey) {
+                link.classList.add('active'); // Ensure you have styling for this if desired
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // Scroll to top
+        window.scrollTo(0, 0);
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            showSection(targetId);
+
+            // Mobile menu close logic
+            const navLinksContainer = document.querySelector('.nav-links');
+            if (window.getComputedStyle(navLinksContainer).position === 'absolute') {
+                navLinksContainer.style.display = 'none';
+            }
+        });
+    });
+
+    // Initialize with Home view
+    showSection('home');
+
+    // Assuming initScrollSpy is defined elsewhere or will be added
+    // initScrollSpy();
+
     initThreeJS();
     populateContent();
     initAnimations();

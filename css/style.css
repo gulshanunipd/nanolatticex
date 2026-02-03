@@ -486,3 +486,8 @@ footer {
 .glow-indigo:hover {
     box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
 }
+
+/* Utility Class for Tab Navigation */
+.section-hidden {
+    display: none !important;
+}
