@@ -100,6 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Handle "Discover More" button
+    document.querySelector('.cta-button').addEventListener('click', (e) => {
+        e.preventDefault();
+        showSection('about');
+    });
+
     // Initialize with Home view
     showSection('home');
 
