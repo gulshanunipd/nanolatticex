@@ -491,3 +491,8 @@ footer {
 .section-hidden {
     display: none !important;
 }
+
+/* Fix content overlap with fixed navbar */
+main {
+    padding-top: 130px;
+}
