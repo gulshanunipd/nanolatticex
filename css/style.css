@@ -507,3 +507,51 @@ footer {
 main {
     padding-top: 130px;
 }
+/* Enhanced About Us Styling */
+.about-text h3 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.about-text .feature-list li {
+    font-size: 1.05rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vision-mission .card {
+    background: linear-gradient(145deg, #ffffff, #f3f4f6);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.05), -5px -5px 15px #ffffff;
+    border: none;
+}
+
+.vision-mission .card h3 {
+    color: var(--accent-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.future-quote {
+    background: linear-gradient(to right, rgba(14, 165, 233, 0.05), rgba(79, 70, 229, 0.05));
+    border-radius: 16px;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.future-quote h3 {
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
