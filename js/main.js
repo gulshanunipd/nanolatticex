@@ -348,15 +348,8 @@ function setupNavigation() {
     const navLinks = document.querySelector('.nav-links');
 
     hamburger.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        if (navLinks.style.display === 'flex') {
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '70px';
-            navLinks.style.right = '0';
-            navLinks.style.background = 'rgba(5, 10, 20, 0.95)';
-            navLinks.style.width = '100%';
-            navLinks.style.padding = '2rem';
-        }
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
     });
+});
 }
