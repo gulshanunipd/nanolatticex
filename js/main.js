@@ -351,5 +351,4 @@ function setupNavigation() {
         navLinks.classList.toggle('active');
         hamburger.classList.toggle('active');
     });
-});
 }
