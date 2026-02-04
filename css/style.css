@@ -555,3 +555,83 @@ main {
     font-family: var(--font-heading);
     letter-spacing: 1px;
 }
+
+/* --- Mobile Optimization & Refactored Styles --- */
+
+/* 1. New Classes from Refactor */
+.about-grid {
+    margin-bottom: 3rem;
+}
+
+.vision-mission {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.future-quote {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.corporate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.collaborations-section {
+    padding: 4rem 2rem;
+    background: var(--bg-color);
+}
+
+.collaborations-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.collab-item {
+    text-align: center;
+    max-width: 300px;
+}
+
+/* 2. Mobile Media Queries */
+@media (max-width: 768px) {
+    /* Navbar Adjustment */
+    .navbar {
+        height: 70px;
+        padding: 1rem 5%;
+    }
+    
+    main {
+        padding-top: 80px; /* Adjust for smaller navbar */
+    }
+
+    /* Typography Scaling */
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Grids to Stacks */
+    .vision-mission,
+    .corporate-grid,
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Collaborations Grid - Reduce gap */
+    .collaborations-grid {
+        gap: 2rem;
+    }
+}
